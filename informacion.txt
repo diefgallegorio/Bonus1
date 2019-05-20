@@ -1,0 +1,6 @@
+Nombre: Diego
+Cedula: 12333
+ID curso: 2
+Nombre del curso: Desarrollo web
+Intensidad horaria de: 25 horas 
+Invesión: 850000
