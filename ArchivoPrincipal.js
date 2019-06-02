@@ -1,6 +1,8 @@
 const {cursos} = require('./objetos');
 const fs = require('fs');
 const {opciones, argv} = require ('./cliente');
+const express = require('express')
+const app = express()
 
 
 //Funcion para listar los cursos con el setTimeOut
@@ -30,19 +32,26 @@ if(typeof(argv.i) == 'undefined'){
         listarCursos();
     }else{
         
-        texto = 'Nombre: ' + argv.n + '\n' + 
-                'Cedula: ' + argv.c + '\n' +
-                'ID curso: ' + argv.i + '\n' + 
-                'Nombre del curso: ' + informacionCurso.nombreCurso + '\n' +
-                'Intensidad horaria de: ' + informacionCurso.duracionCurso + ' horas \n' +
-                'Invesión: ' + informacionCurso.valorCurso;
-        fs.writeFile('informacion.txt', texto, (err) =>{
-            if (err) throw (err);
-        console.log('\n\n\nEl usuario (' + argv.n + ') \nIdenficado con cedula (' + argv.c + '), \nSe ha inscrito en el curso (' + informacionCurso.nombreCurso + ')\nIntensidad total de ' + informacionCurso.duracionCurso + ' horas\nInversión total de $' + informacionCurso.valorCurso + '\n');
-        console.log('¡¡Se ha creado el archivo!!');
+        texto = '<h1>Nombre: ' + argv.n + '</h1><br>' + 
+                '<h2>Cedula: ' + argv.c + '<br>' +
+                'ID curso: ' + argv.i + '<br>' + 
+                'Nombre del curso: ' + informacionCurso.nombreCurso + '<br>' +
+                'Intensidad horaria de: ' + informacionCurso.duracionCurso + ' horas <br>' +
+                'Invesión: ' + informacionCurso.valorCurso + '</h2>';
+        // fs.writeFile('informacion.txt', texto, (err) =>{
+        //     if (err) throw (err);
+        // console.log('\n\n\nEl usuario (' + argv.n + ') \nIdenficado con cedula (' + argv.c + '), \nSe ha inscrito en el curso (' + informacionCurso.nombreCurso + ')\nIntensidad total de ' + informacionCurso.duracionCurso + ' horas\nInversión total de $' + informacionCurso.valorCurso + '\n');
+        // console.log('¡¡Se ha creado el archivo!!');
 
-        })   
+        // })   
     }
 }
+
+ 
+app.get('/', function (req, res) {
+  res.send(texto)
+})
+ 
+app.listen(3000)
 
 

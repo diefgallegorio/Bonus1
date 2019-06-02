@@ -1,6 +1,6 @@
-Nombre: Diego
-Cedula: 12333
-ID curso: 2
-Nombre del curso: Desarrollo web
-Intensidad horaria de: 25 horas 
-Invesión: 850000
+Nombre: DiegoGR
+Cedula: 21333
+ID curso: 3
+Nombre del curso: Scrum
+Intensidad horaria de: 7 horas 
+Invesión: 100000
